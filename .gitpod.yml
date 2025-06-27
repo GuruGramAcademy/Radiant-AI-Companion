@@ -1,0 +1,17 @@
+# .gitpod.yml - Gitpod Configuration for Radiant AI Companion
+
+# Image to use for the workspace (Python 3.10 is a good choice)
+image: python:3.10-slim
+
+# Commands to run on workspace startup
+tasks:
+  - name: Install Dependencies
+    init: pip install Flask textblob
+    command: echo "Dependencies installed. Starting Radiant..."
+  - name: Run Radiant
+    command: python app.py
+
+# Ports to expose and open in the browser
+ports:
+  - port: 5000
+    onOpen: open-browser # Automatically opens the Flask app in a new browser tab
